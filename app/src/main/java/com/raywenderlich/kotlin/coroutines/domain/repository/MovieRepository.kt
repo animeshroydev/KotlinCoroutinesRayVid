@@ -37,5 +37,5 @@ import com.raywenderlich.kotlin.coroutines.data.model.Result
  */
 interface MovieRepository {
 
-  suspend fun getMovies(): Result<List<Movie>>
+  suspend fun getMovies(): List<Movie>
 }
