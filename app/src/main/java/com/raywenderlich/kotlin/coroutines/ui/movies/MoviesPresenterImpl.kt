@@ -31,6 +31,7 @@ package com.raywenderlich.kotlin.coroutines.ui.movies
 
 import android.util.Log
 import com.raywenderlich.kotlin.coroutines.domain.repository.MovieRepository
+import com.raywenderlich.kotlin.coroutines.utils.logCoroutine
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
@@ -53,6 +54,7 @@ class MoviesPresenterImpl(private val movieRepository: MovieRepository) : Movies
 
     override fun getData() {
         launch {
+            logCoroutine("MoviesPresenterImpl -> getData", coroutineContext)
             delay(500)
             val result = runCatching {  movieRepository.getMovies() }
 
